@@ -166,9 +166,9 @@ public final class SupaCombat extends JavaPlugin implements Listener {
             rewardKiller(killer, player, true);
         }
         // Quit events fire while the player is leaving; explicitly damage them to death after the event.
-        Bukkit.getScheduler().runTask(this, () -> {
-            if (player.isOnline() && !player.isDead()) player.setHealth(0.0);
-        });
+        if (!player.isDead()) {
+            player.setHealth(0.0);
+        }
     }
 
     @EventHandler
