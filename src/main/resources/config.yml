@@ -1,0 +1,47 @@
+# SupaCombat settings
+combat:
+  duration-seconds: 21
+  actionbar:
+    enabled: true
+    text: "<#A8A8A8>Combat: <#37BFF9>{time}"
+  # Player-vs-player damage only.
+  tag-on-player-damage: true
+
+messages:
+  no-permission: "<red>You don't have permission to use this."
+  in-combat: "<red>You cannot do this in combat."
+  logout-broadcast: "<#FB0000>☠ {player} was slain by {killer}"
+  kill-broadcast: "<#FB0000>☠ {victim} was slain by {killer}"
+  shard-reward: "<#A303F8>+★10 <#A2A9B5>for killing {victim}"
+  reloaded: "<green>SupaCombat configuration reloaded."
+  no-player-killer: "<red>Your combat tag expired without a valid player killer."
+
+combat-logging:
+  enabled: true
+  # Commands executed by console when a combat logger is punished.
+  # Placeholders: {killer}, {victim}
+  # The original Skript used: /giveshards give <killer> 10 -s
+  punish-killer-command: "giveshards give {killer} 10 -s"
+  # Also run the reward command when a normal player kill occurs.
+  reward-on-normal-kill: true
+  # Per killer-victim pair cooldown. Set to 24h to match the Skript.
+  reward-cooldown-hours: 24
+  increment-kills-statistic: true
+
+# Root commands are blocked while tagged. Match command roots regardless of arguments.
+blocked-commands:
+  - tpa
+  - tpacancel
+  - tpaccept
+  - tpahere
+  - home
+  - homes
+  - warp
+  - warps
+  - rtp
+  - team home
+  - spawn
+  - afk
+
+# MiniMessage formatting is supported in messages and action bar.
+# Storage is in plugins/SupaCombat/data.yml; no GUI is required for this plugin.
