@@ -1,0 +1,18 @@
+name: SupaCombat
+version: '1.0.0'
+main: com.supacombat.SupaCombat
+api-version: '1.21'
+description: Combat tagging and combat logging protection.
+author: univer404
+softdepend: [Geyser-Spigot, floodgate]
+permissions:
+  supacombat.bypass:
+    description: Bypass SupaCombat's command restrictions.
+    default: op
+  supacombat.admin:
+    description: Reload SupaCombat configuration.
+    default: op
+commands:
+  supacombat:
+    description: SupaCombat administration command.
+    usage: /supacombat reload
